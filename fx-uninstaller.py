@@ -60,3 +60,5 @@ elif command == "no":
     print "All right, you dont want to remove Firefox from your computer."
 else:
     print "Hello, please type \"yes\" if you want to un-install firefox from your computer, write \"no\" if you want to keep firefox in your computer."
+
+print "\nFind more here> http://creativesdiary.com/article/one-click-firefox-uninstaller-linux\n\n"
