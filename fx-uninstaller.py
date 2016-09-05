@@ -26,15 +26,15 @@ def takeAction():
     print "Congratulation: Firefox has been removed."
 
     show_status("Deleting .mozilla/firefox/ from your home directory")
-    os.system("sudo rm -rf '/home/hasan/.mozilla/firefox/'")
+    os.system("sudo rm -rf '/home/$USER/.mozilla/firefox/'")
     print "Success"
 
     show_status("Deleting .macromedia/ and .adobe in your home directory, these can contain \"Flash Cookies\" stored by the browser. The same is true, if applicable, for Silverlight (Moonlight) and other plugins, they can allow websites to store data on your computer.")
-    os.system("sudo rm -rf '/home/hasan/.macromedia/'")
-    os.system("sudo rm -rf '/home/hasan/.adobe'")
+    os.system("sudo rm -rf '/home/$USER/.macromedia/'")
+    os.system("sudo rm -rf '/home/$USER/.adobe'")
     print "Success"
 
-    show_status("Deleting /etc/firefox/, this is where your preferences and user-profiles are stored")
+    show_status("Deleting /etc/firefox/, this is where your preferences and user-profiles are stored.")
     os.system("sudo rm -rf '/etc/firefox/'")
     print "Success"
 
@@ -44,6 +44,10 @@ def takeAction():
 
     show_status("Delete /usr/lib/firefox-addons/")
     os.system("sudo rm -rf '/usr/lib/firefox-addons/'")
+    print "Success"
+
+    show_status("Delete /home/$USER/.cache/mozilla/, this is a cache folder which firefox might use to fetch the old profiles during reinstallation.")
+    os.system("sudo rm -rf '/home/$USER/.cache/mozilla/'")
     print "Success"
 
     print colorred.format(highlight.format("All set :D Firefox has completely removed from your computer... enjoy"))
